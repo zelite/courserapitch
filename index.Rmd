@@ -1,7 +1,7 @@
 ---
-title       : 
+title       : The shortest tour
 subtitle    : 
-author      : 
+author      : zelite
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -11,11 +11,12 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Motivation
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+* You´re planning your next holiday around europe?
+* You want to take full advantage of your holiday time?
+* You want to minimize the time you spend moving from city to city?
+* Then this app is for you!
 
 --- .class #id 
 
