@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>The shortest tour</title>
   <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="The shortest tour">
+  <meta name="author" content="zelite">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -32,9 +32,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1></h1>
+    <h1>The shortest tour</h1>
     <h2></h2>
-    <p><br/></p>
+    <p>zelite<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,14 +43,16 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Motivation</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <ul>
+<li>You´re planning your next holiday around europe?</li>
+<li>You want to take full advantage of your holiday time?</li>
+<li>You want to minimize the time you spend moving from city to city?</li>
+</ul>
+
+<h2>There´s an app for that!</h2>
 
   </article>
   <!-- Presenter Notes -->
@@ -58,10 +60,76 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>How does it work?</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ol>
+<li>Select the cities you want to visit (limited city choices in this beta version)</li>
+<li>Select in which city you want to start your trip.</li>
+<li>Our super amazing algorithms find you the shortest trip through all the cities!
+
+<ul>
+<li>You don´&#39;t visit the same city twice.</li>
+<li>You come back to the city where you began.</li>
+</ul></li>
+</ol>
+
+<h2>Tell me more!</h2>
+
+<p>The <em>traveling salesman problem</em> is a classical computer science problem. Learn more here: <a href="http://en.wikipedia.org/wiki/Travelling_salesman_problem">http://en.wikipedia.org/wiki/Travelling_salesman_problem</a></p>
+
+<p>The package <a href="http://CRAN.R-project.org/package=TSP">TSP</a> provides solvers for this complex problem. And this app provides you a friendly interface to interact with the solver!</p>
+
+<p>Given a matrix of distances and a starting city, the TSP solver gives you the shortest path that does not cross the same city twice.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Let´s look at a bit of code!</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(TSP)
+data(eurodist) ## dataset with distances between several european cities
+tsp_object &lt;- TSP(as.matrix(eurodist)) ## we need a special TSP object
+path &lt;- solve_TSP(x = tsp_object,method = &quot;nn&quot;, control = list(start=1))
+names(path) # Gives the order of the path
+</code></pre>
+
+<pre><code>##  [1] &quot;Athens&quot;          &quot;Rome&quot;            &quot;Milan&quot;          
+##  [4] &quot;Lyons&quot;           &quot;Geneva&quot;          &quot;Marseilles&quot;     
+##  [7] &quot;Barcelona&quot;       &quot;Madrid&quot;          &quot;Lisbon&quot;         
+## [10] &quot;Gibraltar&quot;       &quot;Paris&quot;           &quot;Calais&quot;         
+## [13] &quot;Brussels&quot;        &quot;Hook of Holland&quot; &quot;Copenhagen&quot;     
+## [16] &quot;Hamburg&quot;         &quot;Cologne&quot;         &quot;Munich&quot;         
+## [19] &quot;Vienna&quot;          &quot;Cherbourg&quot;       &quot;Stockholm&quot;
+</code></pre>
+
+<pre><code class="r">attributes(path)$tour_length #Gives the length of the path (km)
+</code></pre>
+
+<pre><code>## [1] 17353
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Room for improvement</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>This app currently only calculates distances in straight line: by using a online service like google maps the road distances could be used instead.</li>
+<li>Instead of distances, maybe it would be interesting to use cost of travel between cities and calculate cheapest trip (we all know how crazy airline prices are.)</li>
+<li>The plotting of the tour is a bit clumbsy. Fancier plotting should be made!</li>
+</ol>
+
+<p>Thanks for watching this presentation! Hope you liked it!</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -72,14 +140,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Motivation'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='How does it work?'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Let´s look at a bit of code!'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Room for improvement'>
+         4
       </a>
     </li>
   </ul>
