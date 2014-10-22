@@ -1,3 +1,9 @@
 base
+datasets
+graphics
+grDevices
+methods
 slidify
+stats
 TSP
+utils

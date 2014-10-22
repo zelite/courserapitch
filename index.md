@@ -14,11 +14,11 @@ knit        : slidify::knit2slides
 
 ## Motivation
 
-* You´re planning your next holiday around europe?
+* You're planning your next holiday around europe?
 * You want to take full advantage of your holiday time?
 * You want to minimize the time you spend moving from city to city?
 
-## There´s an app for that!
+## There's an app for that!
 
 
 
@@ -29,7 +29,7 @@ knit        : slidify::knit2slides
 1. Select the cities you want to visit (limited city choices in this beta version)
 2. Select in which city you want to start your trip.
 3. Our super amazing algorithms find you the shortest trip through all the cities!
-  + You don´'t visit the same city twice.
+  + You don't visit the same city twice.
   + You come back to the city where you began.
 
 ## Tell me more!
@@ -42,7 +42,7 @@ Given a matrix of distances and a starting city, the TSP solver gives you the sh
 
 ---
 
-## Let´s look at a bit of code!
+## Let's look at a bit of code!
 
 
 ```r
@@ -55,7 +55,7 @@ names(path) # Gives the order of the path
 
 ```
 ##  [1] "Athens"          "Rome"            "Milan"          
-##  [4] "Lyons"           "Geneva"          "Marseilles"     
+##  [4] "Geneva"          "Lyons"           "Marseilles"     
 ##  [7] "Barcelona"       "Madrid"          "Lisbon"         
 ## [10] "Gibraltar"       "Paris"           "Calais"         
 ## [13] "Brussels"        "Hook of Holland" "Copenhagen"     
@@ -68,7 +68,7 @@ attributes(path)$tour_length #Gives the length of the path (km)
 ```
 
 ```
-## [1] 17353
+## [1] 17248
 ```
 
 
